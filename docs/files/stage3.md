@@ -51,10 +51,8 @@ Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas 
 
 Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
 
-<p float="left">
-<img src="images/v2_messsystem_bottom_part.JPG" class="center">
-<img src="images/V2_messsystem_printed_bottom.jpeg" class="center">
-</p>
+<img src="images/v2_messsystem_bottom_part.JPG" class="left" height="818px">
+<img src="images/V2_messsystem_printed_bottom.jpeg" class="right" height="818px">
 
 Die Kabelführung zum AS7265X befindet sich nur auf einer Seite, aber der Sensor selbst wurde nicht von der Kabelöffnung wegbewegt, um den Lichteinfall von oben zu verringern, was möglicherweise mit etwas Klebeband behoben werden könnte, da dies zu einem erhöhten Lichteinfall von unten führen könnte, was möglicherweise eine zusätzliche Dichtung über die gesamte Vorderseite erfordern würde, die dann regelmäßig gereinigt werden müsste.
 
