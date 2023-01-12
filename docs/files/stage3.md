@@ -71,8 +71,8 @@ zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
   </div>
 </div>
 
-<img src="images/v2_messsystem_bottom_part.JPG" class="left" max-height="818px">
-<img src="images/V2_messsystem_printed_bottom.jpeg" class="right" max-height="818px">
+<img src="images/v2_messsystem_bottom_part.JPG" class="left" height="818px">
+<img src="images/V2_messsystem_printed_bottom.jpeg" class="right" height="818px">
 
 Die Kabelführung zum AS7265X befindet sich nur auf einer Seite, aber der Sensor selbst wurde nicht von der Kabelöffnung wegbewegt, um den Lichteinfall von oben zu verringern, was möglicherweise mit etwas Klebeband behoben werden könnte, da dies zu einem erhöhten Lichteinfall von unten führen könnte, was möglicherweise eine zusätzliche Dichtung über die gesamte Vorderseite erfordern würde, die dann regelmäßig gereinigt werden müsste.
 
