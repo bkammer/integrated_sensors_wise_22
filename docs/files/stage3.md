@@ -28,7 +28,7 @@ digitalWrite(13, LOW);
 ### Batteriepack
 
 Ein Batteriepack wird für das Messsystem hinzugenommen, um nicht auf ein Netzteil und eine Steckdose in Reichweite angewiesen zu sein.
-Hierfür wird ein [Lade-/Entlademodul (HW-107)](https://akkuplus.de/Lademodul-Entlademodul-HW-107-zum-Laden-Entladen-einer-Li-Ion-Li-Polymer-Zelle-Micro-USBar), ein [Step-Up Converter (SX1308)](https://www.amazon.de/ANGEEK-Step-up-Wandler-Booster-Versorgungs/dp/B07RGZXPYY), ein [Akku](https://eckstein-shop.de/PKNERGY-Lithium-Ion-Battery-Cell-ICR-18650-37V-2600mAh-LiPo-Li-Ion?googlede=1&gclid=EAIaIQobChMI7_XxncPG-wIVOxkGAB1HxgB7EAQYASABEgKEfvD_BwE) und ein [Battery holder](https://www.amazon.in/Electronicspices-Button-Battery-lithium-battery/dp/B08CCVDVFC) benötigt.
+Hierfür wird ein [Lade-/Entlademodul (HW-107)](https://akkuplus.de/Lademodul-Entlademodul-HW-107-zum-Laden-Entladen-einer-Li-Ion-Li-Polymer-Zelle-Micro-USB), ein [Step-Up Converter (SX1308)](https://www.amazon.de/ANGEEK-Step-up-Wandler-Booster-Versorgungs/dp/B07RGZXPYY), ein [Akku](https://eckstein-shop.de/PKNERGY-Lithium-Ion-Battery-Cell-ICR-18650-37V-2600mAh-LiPo-Li-Ion?googlede=1&gclid=EAIaIQobChMI7_XxncPG-wIVOxkGAB1HxgB7EAQYASABEgKEfvD_BwE) und ein [Battery holder](https://www.amazon.in/Electronicspices-Button-Battery-lithium-battery/dp/B08CCVDVFC) benötigt.
 
 <img src="images/batteriepack.svg" class="center" style="width:450px;">
 
@@ -105,8 +105,8 @@ datasources:
 
 Weitere Informationen zum Datasource Provisioning und speziell zur InfluxDB kann in der Dokumentation unter den folgenden Links gefunden werden:
 
-- Documentation: [Provisioning data sources](https://grafana.com/docs/grafana/latest/administration/provisioning/#data-sources)
-- Documentation: [Provisioning InfluxDB](https://grafana.com/docs/grafana/latest/datasources/influxdb/provision-influxdb/)
+- Dokumentation: [Provisioning data sources](https://grafana.com/docs/grafana/latest/administration/provisioning/#data-sources)
+- Dokumentation: [Provisioning InfluxDB](https://grafana.com/docs/grafana/latest/datasources/influxdb/provision-influxdb/)
 
 #### Dashboards bereitstellen
 
@@ -135,7 +135,7 @@ In unserem Fall sind diese im selben Ordner wie diese Dashboard Provider Konfigu
 Um ein Dashboard durch Provisioning aufzusetzen, kann das zuvor auf der Grafana Weboberfläche erstellte Dashboard als JSON Datei exportiert und unter dem angegebenen ```path``` abgelegt werden.
 Beim erneuten Start von Grafana wird nun das Dashboard automatisch erstellt.
 
-- Github Link: [Dashboard-Dateien](https://github.com/bkammer/integratedsensors_wise22/tree/main/cloud/docker/grafana/provisioning/dashboards).
+- Github Link: [Dashboard-Dateien](https://github.com/bkammer/integrated_sensors_wise_22/tree/main/cloud/docker/grafana/provisioning/dashboards).
 - Dokumentation: [Provisioning Dashboards](https://grafana.com/docs/grafana/latest/administration/provisioning/#dashboards)
 
 ## Finale Version des Codes

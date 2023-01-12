@@ -10,5 +10,5 @@
 - Benjamin Kammer
 - Dennis Spohrer
 
-[GitHub](https://github.com/bkammer/integratedsensors_wise22)
+[GitHub](https://github.com/bkammer/integrated_sensors_wise_22)
 [Zur Dokumentation](#Integrated-Sensors)
