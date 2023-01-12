@@ -62,9 +62,7 @@ Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse
 <div class="left">
   <div class="centered">
 Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter ist als eine flache Kappe, aber einen guten Zugang zum Breadboard ermöglicht, insbesondere zur ESP-Seite. Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen, aber sie war sowohl zu dünn, um wirklich zu funktionieren, als auch eine Schwachstelle an der Oberseite der Kappe.
-
-Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang
-zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
+Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
     <div class="c">
       <img class="right" src="images/v2_messsystem_side_top_covered.JPG" max-height="810px">
     </div>
@@ -82,10 +80,10 @@ Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, 
   <div class="centered">
 Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen. Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
 <div class="c">
-  <img class="right" src="images/V2_messsystem_printed_batteryside.jpeg" max-height="810px">
+  <img class="right" src="images/V2_messsystem_printed_batteryside.jpeg" height="810px">
   </div>
 <div class="c">
-  <img class="right" src="images/V2_messsystem_printed_buttonside.jpeg" max-height="810px">
+  <img class="right" src="images/V2_messsystem_printed_buttonside.jpeg" height="810px">
   </div>
 </div>
 </div> 
