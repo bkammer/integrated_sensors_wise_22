@@ -35,7 +35,7 @@ Hierfür wird ein [Lade-/Entlademodul (HW-107)](https://akkuplus.de/Lademodul-En
 Bei dieser Schaltung wird das ESP-Modul mit dem Spektral-Sensor bei angeschlossenem Netzteil am Lade-/Entlademodul über das Netzteil versorgt und der Akku geladen.
 Wird das Netzteil entfernt so speist der Akku über den Step-Up Konverter den ESP mit Sensor.
 
->>> TODO Bild vom zusammengesteckten System
+<img src="images/wiring.png" class="center" style="width:450px;">
 
 Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse vorgenommen werden.
 
