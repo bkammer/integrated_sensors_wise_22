@@ -1,0 +1,14 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB_v2_Flux_Spectral
+    type: influxdb
+    access: proxy
+    url: http://influxdb:8086
+    secureJsonData:
+      token: K2VGkieNGZFvYTxvutNSbPteYWWPP_i-RNI8tqenoe57x-Ajequ07GbHOe_D1wWBvzb4ILbas8ozuz_DFCinPA==
+    jsonData:
+      version: Flux
+      organization: hhn_integrated
+      defaultBucket: as7265x_data
+      tlsSkipVerify: true

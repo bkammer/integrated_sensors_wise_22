@@ -1,0 +1,39 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: always
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2/
+      - ./influxdb/config:/etc/influxdb2/
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${YOUR_INFLUXDB_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${YOUR_INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${YOUR_INFLUXDB_ORGANISATION}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${YOUR_INFLUXDB_BUCKET}
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${YOUR_INFLUXDB_ADMIN_TOKEN}
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana/ # grafana working directory
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini # config for grafana instance
+      - ./grafana/provisioning/:/etc/grafana/provisioning/ # placeholder for provisioning scripts that grafana will load on boot
+#    environment:
+#      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
+#      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
+#      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+#      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+#      - GF_AUTH_ANONYMOUS_ENABLED=true
+#      - GF_ENABLE_GZIP=true
+    depends_on:
+      - influxdb
+    user: "1000" # USER ID des Docker Users anpassen

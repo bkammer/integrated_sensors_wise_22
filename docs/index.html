@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Integrated Sensors</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    .cover-main img {
+      width: 230px;
+    }
+
+    .sidebar ul li a {
+      color: #364149;
+      font-size: 16px;
+    }
+
+    .sidebar ul li li a {
+      font-size: 14px;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1400px) {
+      .center {
+        width: 50% !important;
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      .center {
+        width: 70%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">Bitte warten...</div>
+  <script>
+    window.$docsify = {
+      name: 'Integrated Sensors',
+      repo: 'https://github.com/bkammer/integratedsensors_wise22',
+      //logo: '/_media/icon.svg',
+      search: 'auto',
+      coverpage: true,
+      loadSidebar: true,
+      subMaxLevel: 3,
+      sidebarDisplayLevel: 1,
+      pagination: {
+        previousText: 'PREVIOUS',
+        nextText: 'NEXT',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- Plugins -->
+  <!-- Search -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Copy to Clipboard -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!-- Pagination -->
+  <script src="//unpkg.com/docsify-pagination@2.10.1/dist/docsify-pagination.min.js"></script>
+  <!-- docsify-sidebar-collapse -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
+  <!-- prismjs@1.29.0 -->
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-http.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-json.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-clike.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+  <script src="//unpkg.com/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <!-- End Plugins -->
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+# Apple verstioning
+.DS_Store
+node_modules
+package-lock.json
+package.json
+
+cloud/docker/grafana/data/*
+cloud/docker/influxdb/data/*
+cloud/docker/influxdb/config/*
