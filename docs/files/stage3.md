@@ -41,11 +41,11 @@ Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse
 
 ## Gehäuse Anpassungen
 
-<img src="images/v2_messsystem_side_top_esp.JPG" class="center" height="818px>
+<img src="images/v2_messsystem_side_top_esp.JPG" class="center" height="818px">
 
 Die Hinzufügung der Batterie in Verbindung mit der mangelnden Zugänglichkeit des Vorgängers führte dazu, dass das ESP-Gehäuse völlig neu gestaltet werden musste. Das neue Design besteht aus einem Breadboard, auf dem der ESP und seine Module einander gegenüber montiert sind. Es wird durch Schieber auf beiden Seiten reibschlüssig gehalten. Die Höhe der ESP-Seite wird durch die Höhe des ESP bestimmt, während die andere Seite durch die Höhe des Summers bestimmt wird.
 
-<img src="images/v2_messsystem_side_top_covered.JPG" class="center" height="818px>
+<img src="images/v2_messsystem_side_top_covered.JPG" class="center" height="818px">
 
 Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter ist als eine flache Kappe, aber einen guten Zugang zum Breadboard ermöglicht, insbesondere zur ESP-Seite. Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen, aber sie war sowohl zu dünn, um wirklich zu funktionieren, als auch eine Schwachstelle an der Oberseite der Kappe.
 
@@ -58,11 +58,11 @@ Die Kabelführung zum AS7265X befindet sich nur auf einer Seite, aber der Sensor
 
 Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, nachdem die Kabelöffnung die Seitenwand des unteren Teils durchquert hat. Dies lässt sich am besten durch den Wechsel zu einer Befestigung mit Schrauben lösen.
 
-<img src="images/V2_messsystem_printed_batteryside.jpeg" class="center" height="818px>
+<img src="images/V2_messsystem_printed_batteryside.jpeg" class="center" height="818px">
 
 Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen.
 
-<img src="images/V2_messsystem_printed_buttonside.jpeg" class="center" height="818px>
+<img src="images/V2_messsystem_printed_buttonside.jpeg" class="center" height="818px">
 
 Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
 
