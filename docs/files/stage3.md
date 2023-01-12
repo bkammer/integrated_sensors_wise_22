@@ -47,7 +47,6 @@ Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse
   justify-content: left;
   align-items: center;
   height: 818px;
-  border: 3px solid green;
 }
 .c {
   margin-left: auto;
