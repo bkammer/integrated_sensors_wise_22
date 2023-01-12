@@ -33,7 +33,7 @@ Die Sensor-Chips kommunizieren untereinander über das I²C Protokoll.
 Der Erste der drei Sensor-Chips (AS72651) ist dabei der Master und die anderen beiden (AS72652, AS72653) sind die Slaves des I²C Busses.
 
 Alle drei Sensor-Chips besitzen virtuelle Adressen ihrer Kanäle, die mit I²C angesteuert werden können.
-Im Kapitel [Stage1](docs/stage1.md) wird mit Hilfe von Code näher darauf eingegangen.
+Im Kapitel [Stage1](files/stage1.md) wird mit Hilfe von Code näher darauf eingegangen.
 Die externe Kommunikation läuft dabei ausschließlich über den Master Chip AS72651, welcher Informationen der Slaves nach Bedarf bereitstellt.
 Es ist nicht bekannt, wie intern die Bereitstellung der Daten über I²C funktioniert.
 
