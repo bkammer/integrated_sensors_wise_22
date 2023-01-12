@@ -426,8 +426,6 @@ Um das Gehäuse zu optimieren, gibt es einige mögliche Verbesserungen, die übe
 
 ### BwCloud
 
-<img src="/images/bwcloud_logo_blau_weiss_little.svg" width=10%>
-
 Mit folgenden Schritten kann man sich auf der BwCloud Weboberfläche anmelden:
 
 - Zur BwCloud Weboberfläche [www.bw-cloud.org](https://www.bw-cloud.org) navigieren.

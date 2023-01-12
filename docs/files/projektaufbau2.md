@@ -13,7 +13,7 @@ Die hierfür verwendeten Hardware Materialien belaufen sich auf:
 
 - [SparkFun Triad Spectroscopy Sensor - AS7265x (Qwicc)](https://www.sparkfun.com/products/15050)
 - [ESP32 NODEMCU Module](https://www.az-delivery.de/en/products/esp32-developmentboard)
-- [Lademodul / Entlademodul - HW-107](https://akkuplus.de/Lademodul-Entlademodul-HW-107-zum-Laden-Entladen-einer-Li-Ion-Li-Polymer-Zelle-Micro-USBar)
+- [Lademodul / Entlademodul - HW-107](https://akkuplus.de/Lademodul-Entlademodul-HW-107-zum-Laden-Entladen-einer-Li-Ion-Li-Polymer-Zelle-Micro-USB)
 - [KY-012 Buzzer Modul aktiv](https://www.az-delivery.de/products/buzzer-modul-aktiv?variant=8175828729952)
 - [SX1308 Step-Up Converter Regulator](https://www.amazon.de/ANGEEK-Step-up-Wandler-Booster-Versorgungs/dp/B07RGZXPYY)
 - [Li-Ion Akku Lithium Ionen Batterie](https://eckstein-shop.de/PKNERGY-Lithium-Ion-Battery-Cell-ICR-18650-37V-2600mAh-LiPo-Li-Ion?googlede=1&gclid=EAIaIQobChMI7_XxncPG-wIVOxkGAB1HxgB7EAQYASABEgKEfvD_BwE)

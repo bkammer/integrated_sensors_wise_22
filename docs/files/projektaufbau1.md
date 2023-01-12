@@ -91,7 +91,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
-Github: [install_docker.sh](https://github.com/bkammer/integratedsensors_wise22/blob/main/raspberrypi/setup/install_docker.sh)
+Github: [install_docker.sh](https://github.com/bkammer/integrated_sensors_wise_22/blob/main/raspberrypi/setup/install_docker.sh)
 
 > Damit der Besitzer des Skriptes dieses ausführen kann, muss die entsprechende Ausführ-Berechtigung (```chmod u+x install_docker.sh```) gesetzt werden.
 > Anschließend kann mit dem Shell-Befehl ```./install_docker.sh``` das Skript ausgeführt werden.

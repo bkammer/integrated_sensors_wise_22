@@ -2,7 +2,7 @@
 
 ## Messsystem Spektral-Sensor
 
-Documentation: [Messsystem Spektral-Sensor](https://bkammer.github.io/integratedsensors_wise22/#/)
+Dokumentation: [Messsystem Spektral-Sensor](https://bkammer.github.io/integrated_sensors_wise_22/#/)
 
 ## Authors
 
