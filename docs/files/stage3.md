@@ -78,11 +78,16 @@ Die Kabelführung zum AS7265X befindet sich nur auf einer Seite, aber der Sensor
 
 Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, nachdem die Kabelöffnung die Seitenwand des unteren Teils durchquert hat. Dies lässt sich am besten durch den Wechsel zu einer Befestigung mit Schrauben lösen.
 
-  <div class="centered">Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen. Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.<div class="c">
+<div class="left">
+  <div class="centered">
+Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen. Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
+<div class="c">
   <img class="right" src="images/V2_messsystem_printed_batteryside.jpeg" max-height="810px">
-  </div><div class="c">
+  </div>
+<div class="c">
   <img class="right" src="images/V2_messsystem_printed_buttonside.jpeg" max-height="810px">
-  </div></div>
+  </div>
+</div>
 </div> 
 
 <p>Kurz gefasst würden wir bei der nächsten Version des Gehäuses auf ein Schraubsystem umsteigen, da es etwas Platz spart und das Ratespiel bei der Entscheidung über die Abstände zwischen den verschiebbaren Teilen eliminiert. Auch das Problem der Kabelführung wäre damit gelöst. Als kleine Änderung kann das untere Gehäuse um weitere 3-4mm abgesenkt werden, wenn die Stifte im Durchmesser um 0,5mm dünner gemacht werden, so dass der Sensor direkt an der Öffnung anliegt. Außerdem können die Löcher für den Batterieschalter, die Batterieverkabelung und die Taste für die Abtastung vorgefertigt werden, um eine bessere Passform zu erreichen.</p>
