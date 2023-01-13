@@ -56,8 +56,9 @@ Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen
 <img src="images/V2_messsystem_printed_bottom.jpeg" class="center">
 
 Wir könnten den Lichteinfall von oben reduzieren, indem wir den AS7265X weiter seitlich von der Kabelöffnung wegbewegen, aber das könnte aufgrund der asymmetrischen Front zu Lichteinfall von unten führen. Da das Problem des Lichteinfalls von oben leicht mit einem Stück undurchsichtigem Klebeband über der Kabelöffnung behoben werden kann, sobald die Kabel hindurchgeführt wurden, haben wir uns entschieden, den Sensor mittig im Gehäuse zu belassen.
-Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, nachdem die Kabelöffnung die Seitenwand des unteren Teils durchquert hat.
-Dies lässt sich am besten durch den Wechsel zu einer Befestigung mit Schrauben lösen.
+
+Bei der Montage wurde festgestellt, dass die zum AS7265X führenden Kabel durch die Kabelöffnung gezogen werden müssen, nachdem sie die Seitenwand dessen Gehäuses durchquert haben.
+Dies lässt sich am besten durch den Wechsel zu einer Schraubbefestigung beheben.
 
 Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen.
 Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
