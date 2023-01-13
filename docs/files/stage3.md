@@ -55,7 +55,7 @@ Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen
 <img src="images/v2_messsystem_bottom_part.JPG" class="center">
 <img src="images/V2_messsystem_printed_bottom.jpeg" class="center">
 
-Wir könnten den Lichteinfall von oben reduzieren, indem wir den AS7265X weiter seitlich von der Kabelöffnung wegbewegen, aber das könnte aufgrund der asymmetrischen Front zu Lichteinfall von unten führen. Da das Problem des Lichteinfalls von oben leicht mit einem Stück undurchsichtigem Klebeband über der Kabelöffnung behoben werden kann, sobald die Kabel hindurchgeführt wurden, haben wir uns entschieden, den Sensor mittig im Gehäuse zu belassen.
+Wir könnten den Lichteinfall von oben reduzieren, indem wir den AS7265X weiter seitlich von der Kabelöffnung positionieren, aber das könnte aufgrund der asymmetrischen Front zu Lichteinfall von unten führen. Da das Problem des Lichteinfalls von oben leicht mit einem Stück undurchsichtigem Klebeband über der Kabelöffnung behoben werden kann, sobald die Kabel hindurchgeführt wurden, haben wir uns entschieden, den Sensor mittig im Gehäuse zu belassen.
 
 Bei der Montage wurde festgestellt, dass die zum AS7265X führenden Kabel durch die Kabelöffnung gezogen werden müssen, nachdem sie die Seitenwand dessen Gehäuses durchquert haben.
 Dies lässt sich am besten durch den Wechsel zu einer Schraubbefestigung beheben.
