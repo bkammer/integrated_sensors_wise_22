@@ -15,7 +15,7 @@ Gründe für die Verwendung eines [ESP32](https://www.az-delivery.de/en/products
 
 ### Anschließen des Sensors
 
-TODO: Schaltplan
+<img src="images/Schaltplan_v1.png" class="center">
 
 ### Code
 
@@ -34,7 +34,7 @@ Zunächst werden folgende grundlegende Vorgehen geprüft:
 - Messung durch Knopf-Druck durchführen.
 - Daten im ESP32 sammeln, durch auslesen der Sensordaten
 - Daten in die Cloud Influxdb senden.
-- Daten in der Influxdb zur Überprüfung darstellen. (TODO gehört das noch zum Code?)
+- Daten in der Influxdb zur Überprüfung darstellen.
 
 Wie schon erwähnt wurden hierfür zwei Bibliotheken verwendet.
 

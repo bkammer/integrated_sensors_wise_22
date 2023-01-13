@@ -22,8 +22,10 @@
         "keyrings",
         "NODEMCU",
         "println",
+        "Pullup",
         "Qwicc",
         "runc",
+        "wifiMulti",
         "wiringpi"
     ]
 }

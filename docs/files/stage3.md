@@ -10,7 +10,7 @@ Hinzu kommen ebenfalls noch eine akustische Rückmeldung und ein Batteriepack um
 Für die Feststellung, ob eine Messung durchgeführt wurde soll das Messsystem während der Messung eine akustische Rückmeldung geben.
 Dafür wird ein aktiver Buzzer verwendet, welcher zwei Pins für die Spannungsversorgung und ein weiterer Pin für das Signal besitzt.
 
-<img src="images/buzzer.svg" class="center" style="width:200px;">
+<img src="images/buzzer.svg" class="center">
 
 Zum ansteuern des Buzzers wird vor dem Messvorgang des Spektral Sensors, der Signal Pin (13) des Buzzers auf **HIGH** gezogen.
 Ist das auslesen der Daten vom Spektral-Sensor beendet wird dieser Pin wieder auf **LOW** gezogen.
@@ -30,65 +30,47 @@ digitalWrite(13, LOW);
 Ein Batteriepack wird für das Messsystem hinzugenommen, um nicht auf ein Netzteil und eine Steckdose in Reichweite angewiesen zu sein.
 Hierfür wird ein [Lade-/Entlademodul (HW-107)](https://akkuplus.de/Lademodul-Entlademodul-HW-107-zum-Laden-Entladen-einer-Li-Ion-Li-Polymer-Zelle-Micro-USB), ein [Step-Up Converter (SX1308)](https://www.amazon.de/ANGEEK-Step-up-Wandler-Booster-Versorgungs/dp/B07RGZXPYY), ein [Akku](https://eckstein-shop.de/PKNERGY-Lithium-Ion-Battery-Cell-ICR-18650-37V-2600mAh-LiPo-Li-Ion?googlede=1&gclid=EAIaIQobChMI7_XxncPG-wIVOxkGAB1HxgB7EAQYASABEgKEfvD_BwE) und ein [Battery holder](https://www.amazon.in/Electronicspices-Button-Battery-lithium-battery/dp/B08CCVDVFC) benötigt.
 
-<img src="images/batteriepack.svg" class="center" style="width:450px;">
+<img src="images/batteriepack.svg" class="center">
 
 Bei dieser Schaltung wird das ESP-Modul mit dem Spektral-Sensor bei angeschlossenem Netzteil am Lade-/Entlademodul über das Netzteil versorgt und der Akku geladen.
 Wird das Netzteil entfernt so speist der Akku über den Step-Up Konverter den ESP mit Sensor.
 
-<img src="images/wiring.png" class="center" style="width:450px;">
+<img src="images/wiring.png" class="center">
 
 Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse vorgenommen werden.
 
 ## Gehäuse Anpassungen
 
-<style>
-.centered {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  height: 818px;
-}
-.c {
-  margin-left: auto;
-}</style>
-<div class="left">
-<div class="centered">
-    Die Hinzufügung der Batterie in Verbindung mit der mangelnden Zugänglichkeit des Vorgängers führte dazu, dass das ESP-Gehäuse völlig neu gestaltet werden musste. Das neue Design besteht aus einem Breadboard, auf dem der ESP und seine Module einander gegenüber montiert sind. Es wird durch Schieber auf beiden Seiten reibschlüssig gehalten. Die Höhe der ESP-Seite wird durch die Höhe des ESP bestimmt, während die andere Seite durch die Höhe des Summers bestimmt wird.
-    <div class="c">
-        <img src="images/v2_messsystem_side_top_esp.JPG" class="right" max-height="810px">
-    </div>
-</div>
-</div>
-<div class="left">
-  <div class="centered">
+Die Hinzufügung der Batterie in Verbindung mit der mangelnden Zugänglichkeit des Vorgängers führte dazu, dass das ESP-Gehäuse völlig neu gestaltet werden musste.
+Das neue Design besteht aus einem Breadboard, auf dem der ESP und seine Module einander gegenüber montiert sind.
+Es wird durch Schieber auf beiden Seiten reibschlüssig gehalten. Die Höhe der ESP-Seite wird durch die Höhe des ESP bestimmt, während die andere Seite durch die Höhe des Summers bestimmt wird.
+
+<img src="images/v2_messsystem_side_top_esp.JPG" class="center">
+
 Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter ist als eine flache Kappe, aber einen guten Zugang zum Breadboard ermöglicht, insbesondere zur ESP-Seite. Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen, aber sie war sowohl zu dünn, um wirklich zu funktionieren, als auch eine Schwachstelle an der Oberseite der Kappe.
 Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
-    <div class="c">
-      <img class="right" src="images/v2_messsystem_side_top_covered.JPG" max-height="810px">
-    </div>
-  </div>
-</div>
 
-<img src="images/v2_messsystem_bottom_part.JPG" class="left" height="818px">
-<img src="images/V2_messsystem_printed_bottom.jpeg" class="right" height="818px">
+<img src="images/v2_messsystem_side_top_covered.JPG" class="center">
+
+<img src="images/v2_messsystem_bottom_part.JPG" class="center">
+<img src="images/V2_messsystem_printed_bottom.jpeg" class="center">
 
 Die Kabelführung zum AS7265X befindet sich nur auf einer Seite, aber der Sensor selbst wurde nicht von der Kabelöffnung wegbewegt, um den Lichteinfall von oben zu verringern, was möglicherweise mit etwas Klebeband behoben werden könnte, da dies zu einem erhöhten Lichteinfall von unten führen könnte, was möglicherweise eine zusätzliche Dichtung über die gesamte Vorderseite erfordern würde, die dann regelmäßig gereinigt werden müsste.
 
-Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, nachdem die Kabelöffnung die Seitenwand des unteren Teils durchquert hat. Dies lässt sich am besten durch den Wechsel zu einer Befestigung mit Schrauben lösen.
+Bei der Konstruktion wurde festgestellt, dass die Kabel verlegt werden müssen, nachdem die Kabelöffnung die Seitenwand des unteren Teils durchquert hat.
+Dies lässt sich am besten durch den Wechsel zu einer Befestigung mit Schrauben lösen.
 
-<div class="left">
-  <div class="centered">
-Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen. Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
-<div class="c">
-  <img class="right" src="images/V2_messsystem_printed_batteryside.jpeg" height="810px">
-  </div>
-<div class="c">
-  <img class="right" src="images/V2_messsystem_printed_buttonside.jpeg" height="810px">
-  </div>
-</div>
-</div> 
+Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen.
+Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
 
-<p>Kurz gefasst würden wir bei der nächsten Version des Gehäuses auf ein Schraubsystem umsteigen, da es etwas Platz spart und das Ratespiel bei der Entscheidung über die Abstände zwischen den verschiebbaren Teilen eliminiert. Auch das Problem der Kabelführung wäre damit gelöst. Als kleine Änderung kann das untere Gehäuse um weitere 3-4mm abgesenkt werden, wenn die Stifte im Durchmesser um 0,5mm dünner gemacht werden, so dass der Sensor direkt an der Öffnung anliegt. Außerdem können die Löcher für den Batterieschalter, die Batterieverkabelung und die Taste für die Abtastung vorgefertigt werden, um eine bessere Passform zu erreichen.</p>
+<img src="images/V2_messsystem_printed_batteryside.jpeg" class="center">
+
+<img src="images/V2_messsystem_printed_buttonside.jpeg" class="center">
+
+Kurz gefasst würden wir bei der nächsten Version des Gehäuses auf ein Schraubsystem umsteigen, da es etwas Platz spart und das Ratespiel bei der Entscheidung über die Abstände zwischen den verschiebbaren Teilen eliminiert.
+Auch das Problem der Kabelführung wäre damit gelöst.
+Als kleine Änderung kann das untere Gehäuse um weitere 3-4mm abgesenkt werden, wenn die Stifte im Durchmesser um 0,5mm dünner gemacht werden, so dass der Sensor direkt an der Öffnung anliegt.
+Außerdem können die Löcher für den Batterieschalter, die Batterieverkabelung und die Taste für die Abtastung vorgefertigt werden, um eine bessere Passform zu erreichen.
 
 ## Grafana automatisieren
 
