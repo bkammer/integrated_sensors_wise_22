@@ -42,33 +42,36 @@ Durch hinzufügen von Batteriepack und Buzzer musste nun Änderungen am Gehäuse
 ## Gehäuse Anpassungen
 
 Die Hinzufügung der Batterie in Verbindung mit der mangelnden Zugänglichkeit des Vorgängers führte dazu, dass das ESP-Gehäuse völlig neu gestaltet werden musste.
-Das neue Design besteht aus einem Breadboard, auf dem der ESP und seine Module einander gegenüber montiert sind.
-Es wird durch Schieber auf beiden Seiten reibschlüssig gehalten. Die Höhe der ESP-Seite wird durch die Höhe des ESP bestimmt, während die andere Seite durch die Höhe des Summers bestimmt wird.
+Das neue Design baut auf einem Breadboard auf.
+Auf der einen Seite des Breadboards wird der ESP und auf der anderen Seite die weiteren Komponenten wie der LiPo-Charger montiert.
+Durch eine Fuge wird das Breadboard auf beiden Seiten reibschlüssig in Position gehalten.
+Der Abstand zwischen Außenwand und Breadboard wird auf der Seite des ESPs durch diesen bestimmt.
+Auf der anderen Seite besitzt der Buzzer die höchste Einbautiefe, sodass dieser den Abstand vorgibt.
 
 <img src="images/v2_messsystem_side_top_esp.JPG" class="center">
 
-Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter als eine flache Kappe ist.
+Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, welche etwas komplizierter als eine flache Abdeckkappe ist.
 Die abgewinkelte Kappe bietet aber einen guten Zugang zum Breadboard, insbesondere zur ESP-Seite.
-Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen.
-Jedoch war sie zu dünn, um wirklich zu funktionieren.
-Der Schlitz an der Oberseite der Kappe ist eine weitere Schwachstelle.
-Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
+Des weiteren besitzt sie zwei Löcher um die USB-Anschlüsse des ESPs sowie des LiPo-Chargers von außen zu erreichen und einen Schlitz, um sie am Ende des Breadboards zu befestigen.
+Jedoch war der Schlitz zu dünn, um wirklich als Befestigung zu funktionieren und stellte eher eine Schwachstelle als Bruchstelle dar.
+Die Abdeckkappe wurde nicht U-förmig gestaltet, da sie sich durch Druck verformen könnte und kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist.
+Im weiteren würde die Breite des Gehäuses durch eine weitere Fuge zunehmen.
 
 <img src="images/v2_messsystem_side_top_covered.JPG" class="center">
-
 <img src="images/v2_messsystem_bottom_part.JPG" class="center">
 <img src="images/V2_messsystem_printed_bottom.jpeg" class="center">
 
-Wir könnten den Lichteinfall von oben reduzieren, indem wir den AS7265X weiter seitlich von der Kabelöffnung positionieren, aber das könnte aufgrund der asymmetrischen Front zu Lichteinfall von unten führen. Da das Problem des Lichteinfalls von oben leicht mit einem Stück undurchsichtigem Klebeband über der Kabelöffnung behoben werden kann, sobald die Kabel hindurchgeführt wurden, haben wir uns entschieden, den Sensor mittig im Gehäuse zu belassen.
+Indem der AS7265X weiter seitlich zur Kabelöffnung positioniert wird, kann der Lichteinfall von oben reduziert werden.
+Dies könnte aufgrund der asymmetrischen Front jedoch zu Lichteinfall von unten führen.
+Da das Problem des Lichteinfalls von oben leicht mit einem Stück undurchsichtigem Klebeband über der Kabelöffnung behoben werden kann, wurde der Sensor mittig im Gehäuse gelassen.
 
 Bei der Montage wurde festgestellt, dass die zum AS7265X führenden Kabel durch die Kabelöffnung gezogen werden müssen, nachdem sie die Seitenwand dessen Gehäuses durchquert haben.
 Dies lässt sich am besten durch den Wechsel zu einer Schraubbefestigung beheben.
 
-Die Batterie wurde an der Seite angebracht, um die gedruckten Teile kleiner zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen.
-Auf der anderen Seite befindet sich eine Taste, mit der ein Scanvorgang ausgelöst wird.
+Die Batterie wurde an der Seite angebracht, um die gedruckten Teile gering zu halten, und mit einem Schalter zum Ein- und Ausschalten des Geräts versehen.
+Auf der anderen Seite befindet sich ein Taster, mit dem ein Scanvorgang ausgelöst wird.
 
 <img src="images/V2_messsystem_printed_batteryside.jpeg" class="center">
-
 <img src="images/V2_messsystem_printed_buttonside.jpeg" class="center">
 
 Kurz gefasst würden wir bei der nächsten Version des Gehäuses auf ein Schraubsystem umsteigen, da es etwas Platz spart und das Ratespiel bei der Entscheidung über die Abstände zwischen den verschiebbaren Teilen eliminiert.
