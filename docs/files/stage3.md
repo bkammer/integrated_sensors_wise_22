@@ -12,8 +12,8 @@ Dafür wird ein aktiver Buzzer verwendet, welcher zwei Pins für die Spannungsve
 
 <img src="images/buzzer.svg" class="center">
 
-Zum ansteuern des Buzzers wird vor dem Messvorgang des Spektral Sensors, der Signal Pin (13) des Buzzers auf **HIGH** gezogen.
-Ist das auslesen der Daten vom Spektral-Sensor beendet wird dieser Pin wieder auf **LOW** gezogen.
+Zum Ansteuern des Buzzers wird vor dem Messvorgang des Spektral Sensors, der Signal Pin (13) des Buzzers auf **HIGH** gezogen.
+Ist das Auslesen der Daten vom Spektral-Sensor beendet wird dieser Pin wieder auf **LOW** gezogen.
 Somit ist bekannt wie lange der Messvorgang aktiv ist und das Messsystem nicht bewegt werden sollte.
 
 Hier der entsprechende Ausschnitt aus der **takeSensorData()** Funktion:
@@ -47,7 +47,11 @@ Es wird durch Schieber auf beiden Seiten reibschlüssig gehalten. Die Höhe der 
 
 <img src="images/v2_messsystem_side_top_esp.JPG" class="center">
 
-Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter ist als eine flache Kappe, aber einen guten Zugang zum Breadboard ermöglicht, insbesondere zur ESP-Seite. Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen, aber sie war sowohl zu dünn, um wirklich zu funktionieren, als auch eine Schwachstelle an der Oberseite der Kappe.
+Das Ganze wird mit einer um 90 Grad abgewinkelten Kappe verschlossen, was etwas komplizierter als eine flache Kappe ist.
+Die abgewinkelte Kappe bietet aber einen guten Zugang zum Breadboard, insbesondere zur ESP-Seite.
+Sie hat zwei Löcher für die USB-Anschlüsse und einen Schlitz, um sie am Ende des Breadboards zu befestigen.
+Jedoch war sie zu dünn, um wirklich zu funktionieren.
+Der Schlitz an der Oberseite der Kappe ist eine weitere Schwachstelle.
 Die Kappe wurde nicht U-förmig gestaltet, da sie sich durch den Druck verformen könnte, kein ständiger leichter Zugang zur nicht-ESP-Seite erforderlich ist und die Breite durch die Schieber zunimmt.
 
 <img src="images/v2_messsystem_side_top_covered.JPG" class="center">
@@ -76,8 +80,8 @@ Außerdem können die Löcher für den Batterieschalter, die Batterieverkabelung
 
 ### Provisioning (Automatisierte Konfiguration)
 
-Das wiederholt neue einrichten wollen wir uns durch das Provisioning (dt. bereitstellen) ersparen.
-Zwar ist dies in der Regel nur einmal von notwendig, jedoch kann so schnell ein weiteres System (z.B. Lokal zum Testen) aufgesetzt werden.
+Das wiederholt neue Einrichten wollen wir uns durch das Provisioning (dt. bereitstellen) ersparen.
+Zunächst ist es aufwendiger, aber folgend kann schnell ein weiteres System (z.B. Lokal zum Testen) aufgesetzt werden.
 
 - Dokumentation: [Provision dashboards and data sources](https://grafana.com/tutorials/provision-dashboards-and-data-sources/)
 

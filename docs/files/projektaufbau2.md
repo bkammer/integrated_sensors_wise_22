@@ -36,4 +36,4 @@ Im Verlauf des Projektes werden noch Zugriff auf andere Komponenten gebraucht:
 - [Fritzing](https://fritzing.org/)
 - [Fusion360](https://www.autodesk.de/products/fusion-360/overview)
 
-> Als Student besteht die Möglichkeit in der BwCloud eine virtuelle Instanz zu erstellen.
+> Für Studenten besteht die Möglichkeit in der BwCloud eine virtuelle Instanz zu erstellen.

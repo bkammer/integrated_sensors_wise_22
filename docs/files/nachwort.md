@@ -1,7 +1,15 @@
 # Nachwort
 
-Zuletzt können wir sagen, dass das Projekt ein voller Erfolg ist!
-Wir haben ein portables Messsystem in handlicher Form hergestellt, was uns durch einen Hotstop ermöglicht, Messdaten von Objekten zu erfassen und diese automatisiert an eine Datenbank zu schicken, welche zum Schluss auch noch visualisiert werden!
+Zusammenfassend, wir sind überzeugt, dass das Projekt ein voller Erfolg geworden ist.
+Die selbst gesteckten Ziele konnten übertroffen werden.
+Wir haben ein portables Messsystem in handlicher Form hergestellt.
+Dieses System ermöglicht es uns, Messdaten von Objekten zu erfassen und diese durch einen Hotspot automatisiert an eine Datenbank in der Cloud zu schicken.
+Diese Messdaten, welche das Lichtspektrum der Objekte beinhalten, können für den Benutzer jetzt schon visualisiert dargestellt werden!
 
+Eine Weiterentwicklung des Projektes ist jederzeit möglich.
+Es könnte eine automatisierte Analyse der Messdaten erstellt werden welche in ein Aktuatoriksystem zurückgespeist, beispielsweise unreife Bananen von reifen aussortiert.
+
+Wir lernten im Team unsere Stärken zu nutzen und organisierten uns immer besser.
 Wir konnten sehr viel über die Funktionsweise des Sensors lernen, als auch wie die Reflektrometrie funktioniert.
-Außerdem haben wir neue Tools kennenlernen dürfen (z.B. Fusion360 für das Gehäuse, Docsify für die Erstellung von strukturierter Dokumentationen), was uns für unser späteres Leben als Software-Engineers sicherlich helfen wird.
+Außerdem haben wir neue Tools kennengelernt (z.B. Fusion360 für das Gehäuse, Docsify für die Erstellung von strukturierter Dokumentationen).
+Das Arbeiten im Team wie auch das strukturierte, zielorientierte Arbeiten in diesem Projekt wird für unser Berufsleben als Software-Engineer sicherlich hilfreich sein.

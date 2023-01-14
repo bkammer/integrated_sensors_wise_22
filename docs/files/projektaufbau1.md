@@ -3,7 +3,7 @@
 ## Umsetzungsidee
 
 Die Idee der Umsetzung des Messsystems besteht zu Beginn aus dem Spektral-Sensor AS7265x und einem Raspberry Pi 2.
-Der Raspberry Pi 2 kommt aus dem Grund zum Einsatz, da dieser bereits vorhanden ist und nicht bestellt werden muss.
+Der Raspberry Pi 2 kommt aus dem Grund zum Einsatz, da dieser vorhanden ist und nicht bestellt werden muss.
 Der Sensor wird dabei direkt an die I²C Pins der GPIO Schnittstelle des Raspberry Pis (RPi) angeschlossen.
 
 Auf dem Raspberry Pi wird zuerst Docker installiert, mit dessen Hilfe dann ein InfluxDB Container zur Datenspeicherung und ein Grafana Container zur Datenvisualisierung gestartet wird.
@@ -40,17 +40,18 @@ Weitere Komponenten:
 
 Durch die GPIO Pins des Raspberry Pis, die auf 3,3 Volt arbeiten, ist es möglich den Spektral-Sensor direkt ohne externe Spannungsquelle und Logic-Converter an den RPi anzuschließen.
 
-Um überprüfen zu können, ob dieser auch korrekt angeschlossen ist werden die IC-Tools mit dem Befehl ```apt-get install i2c-tools``` installiert.
-I2C-Tools beinhalten vier Befehle von dem **i2cdetect** ein Programm ist, das I2C-Busse nach Geräten scannt.
+Um überprüfen zu können, ob dieser auch korrekt angeschlossen ist werden die I2C-Tools mit dem Befehl ```apt-get install i2c-tools``` installiert.
+I2C-Tools beinhalten vier Befehle von dem **i2cdetect** ein Programm ist.
+Dieses kann I2C-Busse nach Geräten scannen.
 Mit dem Befehl ```i2cdetect -y 1``` wurde die Busadresse des Spektral-Sensors erfolgreich gefunden.
 
 <img src="images/i2cdetect.png" class="center">
 
 Damit das Python-Skript mit dem Spektral-Sensor kommunizieren kann, importiert das Skript die Bibliothek Wiring Pi.
-Zur Zeitersparnis wird getestet, ob das Skript der Thesis (siehe Link unten) auf diese Anwendung übertragbar ist.
+Zur Zeitersparnis wird getestet, ob das Skript der [Bachelor Thesis](https://github.com/LennardBoediger/SpectralSensor) auf diese Anwendung übertragbar ist.
 Bei dem RPi 4 ist Wiring Pi, nach Aussage der Bachelor Thesis ([SpectralSensor](https://github.com/LennardBoediger/SpectralSensor)), bereits vorinstalliert, bei dem verwendeten RPi 2 ist das jedoch nicht der Fall.
 Die Bibliothek Wiring Pi ist schon etwas älter, sodass erst eine passende Version der Bibliothek gefunden werden muss.
-Eine erfolgreiche Installation wurde nach dem Suchen durch folgenden Befehl erlangt:
+Installieren lässt dich die Bibliothek durch folgenden Befehl:
 
 ```sh
 wget https://project-downloads.drogon.net/wiringpi-latest.deb
@@ -60,9 +61,9 @@ sudo dpkg -i wiringpi-latest.deb
 Es gibt inzwischen bessere Bibliotheken, um die GPIOs des RPis zu steuern, sodass in Erwägung gezogen werden sollte die Bibliothek Wiring Pi auszutauschen.
 Das verwenden einer anderen Bibliothek wird sogar von Wiring Pi (siehe [git.drogon.net](https://git.drogon.net/?p=wiringPi;a=summary)) empfohlen.
 
-Das Skript der Bachelor Thesis konnte ausgeführt werden, jedoch war es unbekannt ob es wie vorhergesehen läuft.
-Die Messung schien ausgeführt zu werden, aber es ist nicht bekannt was mit den Daten passiert.
-Die Vermutung belief sich darauf, das keine Datenbank für die Datenspeicherung angegeben wurde, sodass der weitere Schritt sich auf dessen Aufsetzen ausrichtete.
+Das Skript der Bachelor Thesis konnte ausgeführt werden, jedoch kann die vorhergesehene Arbeitsweise des Programmes nicht überprüft werden.
+Die Messung scheint ausgeführt zu werden, aber wohin die Daten gespeichert werden ist nicht bekannt.
+Die Vermutung belief sich darauf, das keine Datenbank für die Datenspeicherung angegeben wurde, sodass der weitere Schritt sich auf das Aufsetzen der Datenbank ausrichtet.
 
 ### Datenspeicher- und Visualisierungssystem aufsetzen
 
@@ -135,24 +136,25 @@ volumes:
 
 ## Konzeptänderung
 
-Beim Einrichten der InfluxDB als Datenquelle in Grafana wurde festgestellt, dass diese Datenbankversion (InfluxDB 1.8) nicht mehr in Grafana unterstützt wird.
-Ein möglicher Lösungsansatz könnte dabei ebenfalls sein, auf eine ältere Version von Grafana zurückzugreifen.
-Dabei stellt sich nur die Frage, wie sinnvoll dieser Lösungsansatz ist, nur auf ältere Hardware und Software zurückzugreifen, die teilweise nicht mehr maintained bzw. aktualisiert wird.
-Eine weitere Lösung zieht eine Änderung in der Hardware auf sich.
+Beim Einrichten der InfluxDB als Datenquelle in Grafana, wurde festgestellt, dass diese Datenbankversion (InfluxDB 1.8) nicht mehr in Grafana unterstützt wird.
+Ein möglicher Lösungsansatz könnte dabei sein, auf eine ältere Version von Grafana zurückzugreifen.
+Dabei stellt sich die Frage wie sinnvoll dieser Lösungsansatz ist, weil die ältere Hardware und Software nicht mehr maintained bzw. aktualisiert wird.
+Eine weitere Lösung verfolgt einen anderen Ansatz.
+Diese zieht eine Änderung in der Hardware auf sich.
 Anstelle des RPi 2 könnte ein RPi 4 zum Einsatz kommen dessen Prozessor auf einer 64-Bit Architektur setzt.
 Damit kann die neuste Version von InfluxDB und Grafana verwendet werden.
 
 Hardwaretechnisch kann auch ein anderer Lösungsansatz in Betracht gezogen werden.
 Der Spektral-Sensor könnte auch mit einem Mikrocontroller, wie den ESP32, betrieben werden.
-Dieser besitzt bereits, im Gegensatz zu dem RPi 2, eine integrierte WLAN-Schnittstelle.
+Dieser besitzt bereits, im Gegensatz zu dem RPi 2, eine integrierte WiFi-Schnittstelle.
 Diese kann genutzt werden, um die Daten des Sensors an die Datenbank zu senden.
 Weitere Vorteile des ESP32 beziehen sich auf die Arduino Entwicklungsumgebung, mit der sich der ESP32 programmieren lässt.
 Dieser Vorteil kommt dadurch zum Tragen, da es für die Arduino Plattform bereits eine Bibliothek für den Spektral-Sensor sowie InfluxDB gibt.
-Im Weiteren ist der Aufbau mit dem Sensor und einem ESP32 wesentlich handlicher und portabler als mit einem RPi.
+Ein weiterer Vorteil ist, dass der Aufbau mit dem Sensor und einem ESP32 wesentlich handlicher und portabler als mit einem RPi ist.
 
 Jedoch lässt sich InfluxDB und Grafana nicht auf einem ESP32 betreiben, sodass hier eine Alternative gefunden werden muss.
 Hier kann wieder ein RPi zum Einsatz kommen.
-Hierbei besteht jedoch das Problem, dass dieser sich immer im gleichen Netzwerk wie der ESP befinden muss, um für den ESP erreichbar zu sein.
+Bei dieser Lösung besteht das Problem, dass dieser sich immer im gleichen Netzwerk wie der ESP befinden muss, um für den ESP erreichbar zu sein.
 Dadurch müssten beide Systeme unterwegs mitgenommen werden, was nicht praktikabel ist.
 
 Lösung hier ist es auf eine Cloud-Instanz zu setzen, die von "überall" erreichbar ist.

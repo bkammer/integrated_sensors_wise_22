@@ -1,6 +1,4 @@
-# Offene Aufgaben
-
-- Spektral-Sensor Kalibrieren
+# Möglichkeiten der Weiterentwicklung
 
 ## Spektral-Sensor kalibrieren
 
@@ -10,13 +8,11 @@ Die gemessenen Daten sollten dann in ein eigenes Dashboard visualisiert werden, 
 
 ## Weitere Messsysteme aufbauen
 
-Wir haben uns auch überlegt, weitere Messsysteme aufzubauen, welche nicht innerhalb eines Stempels realisiert werden.
+Wir haben uns auch überlegt weitere Messsysteme aufzubauen, welche nicht innerhalb eines Stempels realisiert werden.
 Für die gemessenen Daten müsste im Code eine neuer Tag erstellt werden, um die ESPs voneinander unterscheiden zu können.
 Damit könnten die gemessenen Daten zwischen unterschiedlichen Messsystemen verglichen werden
 
-
 ## Eigenschaften ableiten
 
-Eine letzte Aufgabe wäre es aus vorhandenen Eigenschaften von Kategorien an Messungen (z.B. Bananen)
-Eigenschaften von neuen Datensätzen ableiten zu können.
-
+Eine weitere Möglichkeit wäre es aus den Datensätzen Eigenschaften zu erheben.
+Damit könnten dann anschließend Aussagen über neue Messungen getroffen werden.

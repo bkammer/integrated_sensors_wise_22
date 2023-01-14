@@ -8,7 +8,7 @@ Im ersten Schritt wird überprüft, ob mit dem ESP und den Bibliotheken eine Mes
 
 Gründe für die Verwendung eines [ESP32](https://www.az-delivery.de/en/products/esp-32-dev-kit-c-v4) zur Ansteuerung des Spektral-Sensors sind:
 
-- Integrierter WLAN-Chip
+- Integrierter WiFi-Chip
 - Erfahrung in der WiFi-Kommunikation
 - Handliche Form für die Umsetzung der Stempelidee (Vergleich: RPi sehr unhandlich)
 - Schon vorhandene und getestete Bibliotheken für die InfluxDB-Kommunikation und den Spektral-Sensor
@@ -19,20 +19,20 @@ Gründe für die Verwendung eines [ESP32](https://www.az-delivery.de/en/products
 
 ### Code
 
-Im Folgenden wird der Code, für die verschiedenen Stages, dargestellt.
+Im Folgenden wird der Code für die verschiedenen Stages dargestellt.
 Für Stage 1 und Stage 2 werden Durchführungen und Ergebnisse kurz erwähnt.
 In Stage 3 wird der finale Code näher beleuchtet.
 
 Zunächst wird die verwendete Entwicklungsumgebung näher erläutert, sowie die verwendeten Bibliotheken und deren Funktionsweisen.
 Im Projekt wird Plattform IO als IDE (Integrated Development Environment) verwendet.  
-Dies ermöglicht es, sehr einfach cpp Bibliotheken zu installieren und gleichzeitig im Arduino Framework zu bleiben.
+Dies ermöglicht es, einfach cpp Bibliotheken zu installieren und gleichzeitig im Arduino Framework zu bleiben.
 Dadurch können schnell erste Versuche mit dem Sensor durchgeführt werden.
 
 Die Code Konzeption für den ersten Stage ist übersichtlich.
 Zunächst werden folgende grundlegende Vorgehen geprüft:
 
 - Messung durch Knopf-Druck durchführen.
-- Daten im ESP32 sammeln, durch auslesen der Sensordaten
+- Daten im ESP32 sammeln, durch Auslesen der Sensordaten
 - Daten in die Cloud Influxdb senden.
 - Daten in der Influxdb zur Überprüfung darstellen.
 
@@ -42,9 +42,9 @@ Wie schon erwähnt wurden hierfür zwei Bibliotheken verwendet.
 
 Die von uns für den ESP32 zum Auslesen der Sensordaten verwendete Bibliothek ist die [SparkFun_AS7265x_Arduino_Library](https://github.com/sparkfun/SparkFun_AS7265x_Arduino_Library).
 
-Zunächst werden Komponenten zum auslesen des Sensors dargestellt.
+Zunächst werden Komponenten zum Auslesen des Sensors dargestellt.
 Die einzelnen Funktionen werden aufgezählt und deren Funktionsweise erklärt.
-Die genaue Umsetzung im Code, wird in Stage 3 erklärt.
+Die genaue Umsetzung im Code wird in Stage 3 erklärt.
 
 ##### Objektinitialisierung und begin() Funktion
 
@@ -75,7 +75,7 @@ Dabei steht das fünfte Bit jeweils für den ersten und zweiten Slave, wobei die
 
 Im nächsten Schritt, werden die einzelnen LED Stromstärken gesetzt.
 Dazu wird in die jeweiligen Register für die weiße, infrarot und ultraviolett LED eine 1 gesetzt.
-Das Limit wird hier jeweils auf 12.5mA gesetzt.
+Das Limit wird hier jeweils auf 12,5mA gesetzt.
 
 ```cpp
 setBulbCurrent(AS7265X_LED_CURRENT_LIMIT_12_5MA, AS7265x_LED_WHITE);
@@ -99,7 +99,7 @@ enableIndicator();
 ```
 
 Die Status LED wurde im Code explizit ausgeschaltet.
-Zum ausschalten der PWR (Power) LED muss ein Jumper durchtrennt werden.
+Zum Ausschalten der PWR (Power) LED muss ein Jumper durchtrennt werden.
 
 Daraufhin wird der Measurement-Modus gesetzt.
 Damit können alle Kanäle auf einmal gelesen werden, wenn eine Messung initiiert wird.
@@ -107,13 +107,13 @@ Damit können alle Kanäle auf einmal gelesen werden, wenn eine Messung initiier
 Zum Schluss werden noch die Interrupts aktiviert.
 
 Für die letzten Schritte wird ein spezifisches Konfigurationsregister verwendet (siehe Bild unten).
-Die jeweiligen Bits korrespondieren jeweils mit den unterschiedlichen Aufgaben, die aus den Namen des Bildes unten entnommen werden können.
+Die einzelnen Bits korrespondieren jeweils mit den unterschiedlichen Aufgaben, die aus den Namen des Bildes unten entnommen werden können.
 
 <img src="images/AS7265X_configuration.jpg" class="center">
 
 ##### Funktionen zum auslesen der 18 Kanäle
 
-Zum auslesen der Sensordaten, besitzt die Bibliothek verschiedene Funktionen.
+Zum Auslesen der Sensordaten, besitzt die Bibliothek verschiedene Funktionen.
 Zunächst werden Funktionen erklärt, die über I²C die jeweiligen virtuellen Register auslesen.
 
 ###### Funktion: virtualReadRegister
@@ -122,7 +122,8 @@ Zunächst werden Funktionen erklärt, die über I²C die jeweiligen virtuellen R
 
 Zunächst wird das Statusregister, unter der Adresse ```0x00```, ausgelesen.
 Mit einer Bitmaske wird anschließend geprüft, ob in dem Leseregister noch Daten zu lesen sind.
-Falls Daten zu lesen sind wird das Leseregister ausgelesen, jedoch werden diese gelesenen Daten nicht weiter betrachtet, somit verworfen .
+Falls Daten zu lesen sind, wird das Leseregister ausgelesen.
+Diese gelesenen Daten werden jedoch nicht weiter betrachtet und somit verworfen.
 
 ```cpp
 //Read a virtual register from the AS7265x
@@ -152,7 +153,7 @@ Kann nicht ins Schreibregister geschrieben werden, wird ein kurzes Delay ausgef�
   }
 ```
 
-Nun kann in das Schreibregister die Adresse geschrieben werden, die gelesen werden soll.
+Nun kann die Adresse der entsprechenden Daten in das Schreibregister geschrieben werden.
 Das 7. Bit in diesem "Adress-Byte" ist hier 0 um dem System zu sagen, dass es sich hier um einen Lesevorgang handelt.
 
 ```cpp
@@ -161,7 +162,7 @@ Das 7. Bit in diesem "Adress-Byte" ist hier 0 um dem System zu sagen, dass es si
 ```
 
 Im Anschluss wird das Statusregister solange ausgelesen, bis in diesem das Leseregister Bit gesetzt ist.
-Damit wird signalisiert, das sich die angefragten Daten nun im Leseregister vorhanden sind.
+Damit wird signalisiert, dass die angefragten Daten nun im Leseregister vorhanden sind.
 
 ```cpp
  //Wait for READ flag to be set
@@ -186,7 +187,7 @@ uint8_t incoming = readRegister(AS7265X_READ_REG);
 <img src="images/AS7265X_flow_chart_virtual_write.jpeg" class="center">
 
 Um in ein Register zu schreiben wird zunächst geprüft, ob im Statusregister das Bit für das Schreibregister gesetzt ist.
-Falls nicht, wird gewartet, bis dieses nicht mehr gesetzt ist.
+Falls nicht, wird gewartet bis dieses nicht mehr gesetzt ist.
 
 Anschließen wird in das Schreibregister die virtuelle Adresse geschrieben.
 Zusätzlich wird an der Stelle des 7. Bit eine 1 geschrieben, um dem Sensor zu sagen, dass es sich hier um einen Schreibvorgang handelt.
@@ -196,7 +197,7 @@ Zusätzlich wird an der Stelle des 7. Bit eine 1 geschrieben, um dem Sensor zu s
   writeRegister(AS7265X_WRITE_REG, (virtualAddr | 1 << 7));
 ```
 
-Anschließend wird wieder gewartet, bis das Schreibregister keinen gesetzten Bit mehr hat.
+Anschließend wird wieder gewartet bis das Schreibregister keinen gesetzten Bit mehr hat.
 Wenn das Bit nicht mehr gesetzt ist, dann kann in das Schreibregister die Register-Daten geschrieben werden.
 
 ###### Funktion: readRegister
@@ -444,7 +445,7 @@ Damit aber auch auf die InfluxDB und Grafana zugegriffen werden kann müssen noc
 BwCloud Dokumentation: [Einen Port für Zugriff (von außen) öffnen](https://www.bw-cloud.org/de/bwcloud_scope/nutzen#open_port)
 
 > Wir haben uns für die BwCloud entschieden, da sie für Studenten einen kostenlosen Server bereitstellt.
-> Jedoch kann hier auch jeder andere Serverprovider verwendet werden.
+> Außerdem kann auch jeder andere Serverprovider verwendet werden.
 > Wenn die Daten nur lokal zur Verfügung stehen müssen, kann auch der eigene Rechner verwendet werden.
 
 ### Docker Installation
@@ -533,9 +534,9 @@ Es wird empfohlen, Volumes auf beiden Pfaden (```/var/lib/influxdb2/```, ```/etc
 
 ### InfluxDB Weboberfläche
 
-Den erfolgreichen Start des Containers kann überprüft werden, in dem man sich auf der Weboberfläche ```http://YOUR-SERVER-ADDRESS:8086/``` anmeldet.
+Den erfolgreichen Start des Containers kann überprüft werden, indem man sich auf der Weboberfläche ```http://YOUR-SERVER-ADDRESS:8086/``` anmeldet.
 
-Ob der ESP die Messdaten über die API Schnittstelle auf der Datenbank speichern kann, wird dadurch getestet, indem in der Weboberfläche nachgeschaut wird, ob die Daten in der Datenbank vorliegen.
+Ob der ESP die Messdaten über die API Schnittstelle auf der Datenbank speichern kann, testet man indem in der Weboberfläche nachgeschaut, ob die Daten in der Datenbank vorliegen.
 
 <img src="images/influxdb_test_graph.jpeg">
 

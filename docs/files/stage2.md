@@ -3,7 +3,7 @@
 In der zweiten Stage wird das Konzept weiter ausgebaut, indem die Datenvisualisierung auf einem Grafana Dashboard aufgebaut wird.
 Damit diese Daten gruppiert und verglichen werden können, müssen sie beschriftet werden.
 Der Schritt der Datenbeschriftung muss vor dem Senden in die Datenbank auf dem EPS umgesetzt werden.
-Die Eigenschaften zum beschriften der Messdaten muss dem ESP vor dem Messvorgang übermittelt werden.
+Zum Beschriften der Messdaten müssen dem ESP vor dem Messvorgang die Eigenschaften übermittelt werden.
 
 ## Messdaten beschriften
 
@@ -13,7 +13,10 @@ Das hat den Vorteil, dass keine weitere Hardware benötigt wird bis auf den Rech
 ### Measurement und Tags dynamisch setzen
 
 Es wurde entschieden, die Speicherung und Beschriftung der Daten dynamisch zu realisieren.
-Dazu wurden im Code die Funktionen **setNewTag()**, zur Beschriftung der Daten und **setNewMeasurement()**, um festzulegen, in welches Measurement die Daten gespeichert werden sollen verwendet. Die Funktionsweise wird in Stage 3, unter den gleichnamigen Unterkapiteln, darauf eingegangen.
+Dazu wurden im Code die Funktionen **setNewTag()** und  **setNewMeasurement()** verwendet.
+Die Funktion **setNewTag()** zur Beschriftung der Daten.
+Die Funktion **setNewMeasurement()**, um festzulegen in welches Measurement die Daten gespeichert werden sollen.
+Unter den gleichnamigen Unterkapiteln, wird in Stage 3 auf die Funktionsweise eingegangen.
 
 ## Grafana
 
@@ -22,13 +25,13 @@ Dazu wurden im Code die Funktionen **setNewTag()**, zur Beschriftung der Daten u
 Aufgrund der aktuellen Lage des Hacker Angriffs auf die Hochschule Heilbronn, sind deren Systeme nicht mehr mit dem Internet verbunden.
 Somit ist es nicht möglich sich in der BwCloud mit dem Hochschul-Account anzumelden, da der Authentifizierungsserver nicht erreichbar ist.
 
-Beim Aufsetzen von Grafana stehen wir somit vor der Herausforderung, dass wir keinen Zugriff auf die Firewall der BwCloud haben und somit keinen weiteren Port für Grafana freigeben können.
+Beim Aufsetzen von Grafana stehen wir somit vor der Herausforderung, dass wir keinen Zugriff auf die Firewall der BwCloud haben und dadurch keinen weiteren Port für Grafana freigeben können.
 
-Durch die Skripte und Docker ist es einfach möglich das bestehende System neu auf einem alten vorhandenen vServer neu aufzusetzen.
-Sodass wir zu diesem Zeitpunkt die BwCloud durch einen alten vorhandenen vServer ausgetauscht haben.
+Durch die Skripte und Docker ist es einfach möglich das bestehende System auf einem alten vorhandenen vServer neu aufzusetzen.
+Zu diesem Zeitpunkt haben wir die BwCloud durch einen vorhandenen vServer ausgetauscht.
 Codetechnisch muss lediglich kleine Konfigurationsänderungen wie zum Beispiel die IP-Adresse vorgenommen werden.
 
-> Daten die bereits in der Datenbank liegen könnten durch kopieren des **influxdb/** Ordners auf den "neuen" vServer übertragen werden.
+> Daten die bereits in der Datenbank liegen, könnten durch Kopieren des **influxdb/** Ordners auf den "neuen" vServer übertragen werden.
 
 ### docker-compose.yml anpassen
 
@@ -46,7 +49,7 @@ volumes:
 
 Grafana läuft auf dem Port **3000**, der dem Host Port **3000** zugeordnet wird.
 
-Für das automatisierte einrichten von Grafana, werden folgende Environment-Variablen für den Container gesetzt:
+Für das automatisierte Einrichten von Grafana, werden folgende Environment-Variablen für den Container gesetzt:
 
 - ```GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}```
 - ```GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}```
@@ -96,16 +99,16 @@ services:
     user: "1000" # USER ID des Docker Users anpassen
 ```
 
-> Der Ordner **grafana/** auf dem Host muss dem User 1000 gehören, vorausgesetzt der Benutzer, der den Container startet, besitzt die User ID 1000, sonst kann Grafana im Docker-Container keine weiteren Ordner anlegen!
+> Der Ordner **grafana/** auf dem Host muss dem User 1000 gehören, sonst kann Grafana im Docker-Container keine weiteren Ordner anlegen!
 
 Wie schon in Stage 1 kann die **docker-compose.yml** mit dem Befehl ```docker-compose up -d``` gestartet werden.
-Ob der Grafana-Container ebenfalls startet, kann mit dem aufrufen der Weboberfläche ```http://YOUR-SERVER-ADDRESS:3000/``` überprüft werden.
+Ob der Grafana-Container ebenfalls startet, kann mit dem Aufrufen der Weboberfläche ```http://YOUR-SERVER-ADDRESS:3000/``` überprüft werden.
 
 - Weitere Dokumentation: [Run Grafana Docker image](https://grafana.com/docs/grafana/v9.0/setup-grafana/installation/docker/)
 
 ### Datenquelle konfigurieren
 
-In der Weboberfläche angemeldet sollte, bevor ein Dashboard zur Visualisierung erstellt wird, eine Datenquelle hinzugefügt werden.
+Wenn man in der Weboberfläche angemeldet ist sollte eine Datenquelle hinzugefügt werden, bevor ein Dashboard zur Visualisierung erstellt wird.
 
 > Bei der Datenquelle handelt es sich nicht immer um eine Datenbank.
 
@@ -140,7 +143,7 @@ So mussten manche Flux Queries angepasst werden.
 Ein weiterer Punkt, der bei den Queries berücksichtigt werden musste, ist der vorhandene Zeitstempel.
 Ohne diesen kann Grafana die Daten nicht in einem Barchart darstellen.
 Sortiert wurden die Balken des Barcharts nach dem Namen der Channels die in der Datenbank hinterlegt sind.
-Diese Reihenfolge entspricht jedoch nicht der Reihenfolge vom Wellenspektrum.
+Diese Reihenfolge entspricht jedoch nicht der Reihenfolge des Wellenspektrums.
 
   | Channel | Spektrum |
   | ------- | -------- |
